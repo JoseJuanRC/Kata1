@@ -21,7 +21,7 @@ public class Person {
     }
     
     public int getAge(){
-        
+        LocalDate.now().getYear()-birthday.getYear();
     }
     
 }
