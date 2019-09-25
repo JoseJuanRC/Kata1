@@ -1,6 +1,9 @@
 package kata1;
 
 import java.time.LocalDate;
+import java.time.Period;
+import java.time.ZoneId;
+import java.time.ZoneOffset;
 
 public class Person {
     
@@ -21,7 +24,13 @@ public class Person {
     }
     
     public int getAge(){
-        LocalDate.now().getYear()-birthday.getYear();
+        Period period = Period.between(birthday,LocalDate.now());
+        return period.getYears();
+    }
+    
+    @Override
+    public String toString() {
+        return "Person{" + "name=" + name + ", birthday=" + birthday + ",age="+ getAge()+ '}';
     }
     
 }
